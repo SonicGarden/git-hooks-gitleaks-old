@@ -7,7 +7,7 @@ declare FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |
 [ -z "$FILES" ] && exit 0
 echo "  ▶ Check credentials by secretlint"
 # Secretlint all selected files
-echo "$FILES" | xargs docker run -v `pwd`:`pwd` -w `pwd` --rm secretlint/secretlint secretlint
+echo "$FILES" | xargs npx @secretlint/quick-start
 RET=$?
 if [ $RET -eq 0 ] ;then
     exit 0
