@@ -1,16 +1,11 @@
 #!/bin/bash
 
 source `dirname ${0}`/_local-hook-exec
-declare scriptDir=$(cd $(dirname $0);pwd)
-declare parentDir="$(dirname "${scriptDir}")"
-declare FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
-[ -z "$FILES" ] && exit 0
 echo "  ▶ Check credentials by gitleaks"
-echo "$FILES" | xargs  gitleaks detect -v --no-git
+gitleaks protect -v --staged
 RET=$?
 if [ $RET -eq 0 ] ;then
     exit 0
 else
     exit 1
 fi
-
