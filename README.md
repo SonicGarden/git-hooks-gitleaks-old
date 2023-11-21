@@ -61,11 +61,13 @@ git commit
 # FAQ
 - 誤検知をスキップしたい
 
+```
 git commit --no-verify
-
+```
 でコミットすれば、pre-commitフックが動かないので、チェックをスキップできます。
 
 - 既存コードをすべて再チェックしたい
 
+```
 gitleaks detect --source . -v -c `git config --get core.hookspath`/gitleaks.toml
-
+```
