@@ -8,8 +8,6 @@ gitleaksをgithooksのpre-commitで実行するための仕組み
 ## 1.  前提条件
 git 2.9以上をインストールしておいてください
 
-※caulkingなどを使って gitleaksをインストールしているのであれば下記の2,3はできているはずなので4の動作確認ができていればOKです。
-
 ## 2. gitleaksインストール
 ```
 brew install gitleaks
