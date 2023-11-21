@@ -1,7 +1,8 @@
 # git-hooks-gitleaks
 
 gitleaksをgithooksのpre-commitで実行するための仕組み
-gitleaks git-hooksのインストール
+
+# gitleaks git-hooksのインストール
 
 https://github.com/gitleaks/gitleaks
 1.  前提条件
