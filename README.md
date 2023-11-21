@@ -40,7 +40,8 @@ git add secret_key_test
 git commit
 ```
 ・以下のようなERRORが出ればOK
-    
+
+ ```
 ▶ Check credentials by gitleaks
     
     ○
@@ -55,7 +56,7 @@ git commit
     File:        secret_key_test
     Line:        1
     Fingerprint: secret_key_test:aws-access-token:1
-
+```
 
 
 # FAQ
