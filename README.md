@@ -5,17 +5,17 @@ gitleaksをgithooksのpre-commitで実行するための仕組み
 # gitleaks git-hooksのインストール
 
 https://github.com/gitleaks/gitleaks
-# 1.  前提条件
+## 1.  前提条件
 git 2.9以上をインストールしておいてください
 
 ※caulkingなどを使って gitleaksをインストールしているのであれば下記の2,3はできているはずなので4の動作確認ができていればOKです。
 
-2. gitleaksインストール
+## 2. gitleaksインストール
 brew install gitleaks
 インストール確認
 gitleaks version
 バージョンが表示されればインストールOK
-3. commit時にgitleaksでチェックするためのgithooksを設定する
+## 3. commit時にgitleaksでチェックするためのgithooksを設定する
 cd ~
 git clone https://github.com/sonicgarden/git-hooks-gitleaks git-hooks
 cd git-hooks
