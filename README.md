@@ -31,31 +31,47 @@ git config --global core.hooksPath $(pwd)/hooks
    hooksPath = /Users/xxx/src/github.com/SonicGarden/git-hooks-gitleaks/hooks
 
 ## 4. 動作確認
-・適当なプロジェクトでキーをコミットしてみる
-```
-echo 'AKIAIMAAXAAXAAXAXAAA' > secret_key_test
+
+適当なプロジェクトでキーをコミットしてみる
+
+```sh
+echo "sg-gitleaks-test = AKIAIMAAXAAXAAXAXAAA" > secret_key_test
 git add secret_key_test
 git commit
 ```
-・以下のようなERRORが出ればOK
 
- ```
-▶ Check credentials by gitleaks
-    
+以下のようなERRORが出ればOK
+※このリポジトリの設定ファイルが参照されている場合は "RuleID: sg-gitleaks-test" が検知されるはず
+
+```
+  ▶ Check credentials by gitleaks
+
     ○
     │╲
     │ ○
     ○ ░
-    ░    gitleaks    
-    Finding:     AKIAIMAAXAAXAAXAXAAAA
-    Secret:      AKIAIMAAXAAXAAXAXAAA
-    RuleID:      aws-access-token
-    Entropy:     1.670951
-    File:        secret_key_test
-    Line:        1
-    Fingerprint: secret_key_test:aws-access-token:1
-```
+    ░    gitleaks
 
+Finding:     sg-gitleaks-test = AKIAIMAAXAAXAAXAXAAAA
+Secret:      AKIAIMAAXAAXAAXAXAAA
+RuleID:      aws-access-token
+Entropy:     1.670951
+File:        secret_key_test
+Line:        1
+Fingerprint: secret_key_test:aws-access-token:1
+
+Finding:     sg-gitleaks-test = AKIAIMAAXAAXAAXAX...
+Secret:      sg-gitleaks-test
+RuleID:      sg-gitleaks-test
+Entropy:     3.030639
+File:        secret_key_test
+Line:        1
+Fingerprint: secret_key_test:sg-gitleaks-test:1
+
+3:10PM INF 1 commits scanned.
+3:10PM INF scan completed in 17.1ms
+3:10PM WRN leaks found: 2
+```
 
 # FAQ
 - 誤検知をスキップしたい
