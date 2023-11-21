@@ -4,7 +4,7 @@ gitleaksをgithooksのpre-commitで実行するための仕組み
 
 # gitleaks git-hooksのインストール
 
-https://github.com/gitleaks/gitleaks
+参考： https://github.com/gitleaks/gitleaks
 ## 1.  前提条件
 git 2.9以上をインストールしておいてください
 
