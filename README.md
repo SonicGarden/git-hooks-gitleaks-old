@@ -11,9 +11,13 @@ git 2.9以上をインストールしておいてください
 ※caulkingなどを使って gitleaksをインストールしているのであれば下記の2,3はできているはずなので4の動作確認ができていればOKです。
 
 ## 2. gitleaksインストール
+```
 brew install gitleaks
+```
 インストール確認
+```
 gitleaks version
+```
 バージョンが表示されればインストールOK
 ## 3. commit時にgitleaksでチェックするためのgithooksを設定する
 ```
