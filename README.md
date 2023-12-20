@@ -1,4 +1,8 @@
-# git-hooks-gitleaks
+# git-hooks-gitleaks-old
+
+リポジトリ作り直したのでこれはもう使わない。こっちが新しい方
+https://github.com/SonicGarden/git-hooks-gitleaks
+
 
 gitleaksをgithooksのpre-commitで実行するための仕組み
 
